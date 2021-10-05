@@ -1,3 +1,5 @@
+
+   
 import { ColorModeScript } from '@chakra-ui/react';
 import React, { StrictMode } from 'react';
 import ReactDOM from 'react-dom';
@@ -5,10 +7,19 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import * as serviceWorker from './serviceWorker';
 
+import { ApolloClient, InMemoryCache, ApolloProvider } from "@apollo/client";
+
+const client = new ApolloClient({
+  uri: '/graphql',
+  cache: new InMemoryCache(),
+});
+
 ReactDOM.render(
   <StrictMode>
-    <ColorModeScript />
-    <App />
+    <ApolloProvider client={client}>
+      <ColorModeScript />
+      <App />
+    </ApolloProvider>,
   </StrictMode>,
   document.getElementById('root')
 );
