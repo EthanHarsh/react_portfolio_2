@@ -37,6 +37,12 @@ const undecorate = {
     textDecoration: "none"
 }
 
+const social_logos = {
+    display: 'flex',
+    flexFlow: 'row',
+    justifyContent: 'flex-end'
+}
+//<Box width={1/4}><Text fontWeight='bold'><a style={undecorate} href="/about">About</a></Text></Box>
 function NavBar (props) {
     return(
         <Flex style={style}>
@@ -45,17 +51,17 @@ function NavBar (props) {
             </Box>
             <Box width={1/3} style={centerBox}>
                 <Flex>
-                    <Box width={1/4}><Text fontWeight='bold'><a style={undecorate} href="/about">About</a></Text></Box>
-                    <Box width={1/4}><Text fontWeight='bold'><a style={undecorate} href="/portfolio">Portfolio</a></Text></Box>
-                    <Box width={1/4}><Text fontWeight='bold'><a style={undecorate} href="mailto:ethan@ethanharsh.com">Contact</a></Text></Box>
-                    <Box width={1/4}><Text fontWeight='bold'><a style={undecorate} href="/pdf/Ethan_Harsh_Resume.pdf" target="_blank">Resume</a></Text></Box>
+
+                    <Box width={1/3}><Text fontWeight='bold'><a style={undecorate} href="/portfolio">Portfolio</a></Text></Box>
+                    <Box width={1/3}><Text fontWeight='bold'><a style={undecorate} href="mailto:ethan@ethanharsh.com">Contact</a></Text></Box>
+                    <Box width={1/3}><Text fontWeight='bold'><a style={undecorate} href="/pdf/Ethan_Harsh_Resume.pdf" target="_blank">Resume</a></Text></Box>
                 </Flex>
             </Box>
             <Box width={1/3} style={boxBaseStyle}>
                     <Flex style={logoGroup}>
-                        <Box width={1/6}><a style={undecorate} href="https://github.com/EthanHarsh" target="_blank"><Image src={github}></Image></a></Box>
-                        <Box width={1/6}><a style={undecorate} href="https://www.linkedin.com/in/ethanharsh/" target="_blank"><Image src={linkedin}></Image></a></Box>
-                        <Box width={1/6}><a style={undecorate} href="https://www.instagram.com/eharsh4/" target="_blank"><Image src={instagram}></Image></a></Box>
+                        <Box width={1/6} style={social_logos}><a style={undecorate} href="https://github.com/EthanHarsh" target="_blank"><Image src={github}></Image></a></Box>
+                        <Box width={1/6} style={social_logos}><a style={undecorate} href="https://www.linkedin.com/in/ethanharsh/" target="_blank"><Image src={linkedin}></Image></a></Box>
+                        <Box width={1/6} style={social_logos}><a style={undecorate} href="https://www.instagram.com/eharsh4/" target="_blank"><Image src={instagram}></Image></a></Box>
                     </Flex>
             </Box>
         </Flex>
